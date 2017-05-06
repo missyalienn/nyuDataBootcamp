@@ -160,6 +160,18 @@ ff = data.DataReader('F-F_Research_Data_factors', 'famafrench')[0]
 ff.columns = ['xsm', 'smb', 'hml', 'rf']      # rename variables
 
 #%%
+
+#Fame-French Equity returns 
+
+ff.boxplot() 
+ff.plot()
+
+#%%
+ff.plot(ff['rf'], ff['hml'], kind='scatter')
+
+
+             
+#%%
 """
 Review
 """
@@ -168,3 +180,48 @@ data = {'EG.ELC.ACCS.ZS': [53.2, 47.3, 85.4, 22.1],    # access to elec (%)
         'IT.NET.USER.P2': [11.5, 12.9, 41.0, 13.5],    # internet access (%)
         'Country': ['Botswana', 'Namibia', 'South Africa', 'Zambia']}
 af = pd.DataFrame(data)
+
+#%%
+#Exercises 
+
+af.shape
+type(af)
+
+#What is the index? 
+af.index
+print(af)
+
+#Change the index to country names 
+af_country = af.set_index(["Country"])
+print(af_country)
+
+
+#What are the variable names? 
+
+#'EG.ELC.ACCS.ZS'
+#'IT.CEL.SETS.P2'
+#'IT.NET.USER.P2'
+#'Country'
+
+#Change the variable names to something more informative 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
