@@ -10,10 +10,6 @@ Python fundamentals, part 2, for Data Bootcamp course.
 Course materials
 * http://databootcamp.nyuecon.com/
 * https://github.com/NYUDataBootcamp/Materials
-Warning:  This is a working file and has some things in it that aren't
-completely debugged.
-Written by Dave Backus, August 2015
-Created with Python 3.4
 """
 
 #%%
@@ -120,10 +116,53 @@ def combine(first, last):
 both = combine('Chase', 'Coleman')
 print(both)
 
+#%%
+#------------------------------------------------------------------------------
+# EXTRA STUFF, NOT USED
+#------------------------------------------------------------------------------
+"""
+map, reduce, and filter
+"""
+anyoldlist = [2, 'Steelers', [1,5]]
+t = map(type, anyoldlist)
+types = list(t)
+print('\nResult of map:\n', types, sep='')
+
+from functools import reduce
+numlist = [4, -2, 5]
+z = reduce(lambda x,y: x+y, numlist)
+print('Result of reduce (sum):', z)
+
+numlist = [4, -2, 5]
+f = filter(lambda x:  x > 0, numlist)
+newlist = list(f)
+print('Result of filter (find positive numbers):', newlist)
+
+anylist = [2, 'Steelers', [1,2,3]]
+f = filter(lambda x: type(x) == str, anylist)
+newlist = list(f)
+print('Result of filter (find strings):', newlist)
 
 #%%
+"""
+copies
+"""
+print('\nAssignments and copies')
 
+x = [1,2,3]
+print('x =', x)
 
+y = x
+x[0] = 'WHOA!'
+print('After changing x[0]: y =', y)
+
+y[2] = 'xyzzy'
+print('After changing y[2]: x =', x)
+
+x = [1,2,3]
+y = x.copy()
+x[0] = 'WHOA!'
+print('y =', y)
 
 
 
