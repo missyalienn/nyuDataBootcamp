@@ -203,12 +203,19 @@ print(af_country)
 #'IT.NET.USER.P2'
 #'Country'
 
+#%%
 #Change the variable names to something more informative 
+af_country.columns = ['elec', 'cell', 'internet']
 
+print(af)
 
+#%%
+#Create a horizontal bar chart with this DataFrame. 
+#What does it tell us? 
+#Which country has the most access to electricity? Cell phones?
 
-
-
+af_country.plot()
+af_country.plot(kind='barh')
 
 
 
